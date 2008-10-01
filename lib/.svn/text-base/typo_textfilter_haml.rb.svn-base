@@ -1,0 +1,18 @@
+class Typo
+  class Textfilter
+    class HamlFilter < TextFilterPlugin::Markup
+      plugin_display_name "HamlFilter"
+      plugin_description 'give your posts that haml goodness'
+
+      def self.help_text
+        %{
+          check out haml at http://haml.hamptoncatlin.com/
+        }
+      end
+
+      def self.filtertext(blog,content,text,params)
+        Haml::Engine.new(text.gsub(%r{</?notextile>}, '')).render
+      end
+    end
+  end
+end

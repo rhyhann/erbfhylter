@@ -1,0 +1,23 @@
+HamlFilter
+========================
+
+haml for your posts
+
+Installation instructions:
+
+1)  sudo gem install haml
+2)  Download typo_textfilter_hamlfilter-0.1.tar and extract the folder to /your_typo_install/vendor/plugins
+3)  Run the following sql against your typo database
+  insert into `text_filters` (`name`, `description`, `markup`, `filters`, `params`) values('hamlfilter','HamlFilter','hamlfilter','--- \r\n- :hamlfilter','--- {}\r\n');
+4)  Restart your typo server
+5)  Via the typo Administration page, select Settings->Write and then select HamlFilter as your Article Filter. 
+
+
+You can now do nifty stuff like
+='Hi!' * 10
+and get
+Hi!Hi!Hi!Hi!Hi!Hi!Hi!Hi!Hi!Hi!
+
+Haml evaluates your ruby code as expected. Because of this, you can do some neat things, but if you're not careful and allow HamlFilter to control your comments, you're in trouble:
+Do not, I repeat, do not choose HamlFilter as your comment markup. If you do so, you're subjecting yourself to all kinds of malicious attacks.
+

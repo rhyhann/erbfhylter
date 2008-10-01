@@ -1,0 +1,16 @@
+erbfhylter
+========================
+
+erb for your posts
+
+Installation instructions:
+
+2)  Extract it to /your_typo_install/vendor/plugins
+3)  Run the following sql against your typo database
+  insert into `text_filters` (`name`, `description`, `markup`, `filters`, `params`) values('erbfhylter','ErbFhylter','erbfhylter','--- \r\n- :erbfhylter','--- {}\r\n');
+4)  Restart your typo server
+5)  Via the typo Administration page, select Settings->Write and then select Erbfhylter as your Article Filter. 
+
+
+_Do not, I repeat, do not choose HamlFilter as your comment markup. If you do so, you're subjecting yourself to all kinds of malicious attacks._
+
